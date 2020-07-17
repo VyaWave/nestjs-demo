@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="/static/jinchen.jpg"/>
+
+  <p>姓名: <%= name%></p>
+  <p>年龄: <%= age%></p>
+
+  <form action="/user/doAdd" method="post">
+    <input type="text" name="name" placeholder="请输入姓名">
+    <input type="text" name="age" placeholder="请输入姓名">
+    <input type="submit" value="提交">
+  </form>
+</body>
+</html>
