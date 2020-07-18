@@ -1,28 +1,25 @@
-import { Controller, Get, Query, Post, Body, Response, Render } from '@nestjs/common';
+import { Controller, Get, Render, Post, Body, Response } from '@nestjs/common';
+
+import { UserService } from '../../service/user/user.service'
 
 @Controller('user')
 export class UserController {
 
-  // 查询
+  constructor(private userService: UserService ) {}
+
   @Get()
   @Render('default/user')
-  index(){
+  index() {
+    console.info(this.userService.getUserList())
     return {
-      name: '张三',
-      age: '28'
+      users: this.userService.getUserList()
     }
   }
 
-  // @Get('')
-  // index(){
-  //   return '这是一个用户'
-  // }
-
-  // Psot
-  @Post('doAdd')
-  doAdd(@Body() body, @Response() res) {
+  @Post('add')
+  addUser(@Body() body, @Response() res) {
     console.info(body)
     res.redirect('/user')
-    return '添加成功'
   }
+
 }
