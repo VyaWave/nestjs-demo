@@ -9,10 +9,10 @@
   <img src="/static/jinchen.jpg"/>
   <%for(var a = 0; a< users.length; a ++ ){%>
 
-    <li>
-      <p> <%= users[a].userName%></p>
-      <p> <%= users[a].age%></p>
-    </li>
+    <div>
+       <p>姓名: <%= users[a].userName%></p>
+      <p>年龄:  <%= users[a].age%></p>
+    </div>
   <%}%>
 
   <form action="/user/add" method="post">
